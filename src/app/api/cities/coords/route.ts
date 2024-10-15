@@ -1,3 +1,4 @@
+import { CSVCoords } from "@/services/API Routes/cities/cities.model";
 import { nominatimUrls } from "@/services/nominatim/urls";
 import { parse } from "csv-parse";
 import fs from "fs";
@@ -61,7 +62,6 @@ export async function GET(request: NextRequest) {
         fileStream
           .pipe(csvParser)
           .on("data", (record) => {
-
             if (
               record.city_ascii.toLowerCase() === city &&
               record.country.toLowerCase() === country
@@ -82,9 +82,9 @@ export async function GET(request: NextRequest) {
           { status: 404 }
         );
       }
-
+      const { lat, lon } = result as CSVCoords;
       return NextResponse.json(
-        { lat: parseFloat(result.lat), lon: parseFloat(result.lon) },
+        { lat: parseFloat(lat), lon: parseFloat(lon) },
         { status: 200 }
       );
     }

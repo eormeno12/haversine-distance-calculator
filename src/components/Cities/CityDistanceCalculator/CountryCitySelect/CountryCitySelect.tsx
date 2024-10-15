@@ -31,6 +31,13 @@ export const CountryCitySelect = ({
 
         if (selectedCountryCode) {
           const cityList = City.getCitiesOfCountry(selectedCountryCode);
+
+          if (!cityList) {
+            setCities([]);
+            setLoading(false);
+            return;
+          }
+
           const cityNames = cityList.map((city) => city.name);
           setCities(cityNames);
         } else {

@@ -12,3 +12,8 @@ export const CalcDistanceResponseSchema = z.object({
 });
 
 export type CalcDistanceResponse = z.infer<typeof CalcDistanceResponseSchema>;
+
+export type CSVCoords = {
+  lat: string;
+  lon: string;
+}

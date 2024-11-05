@@ -1,9 +1,17 @@
 [Deployment (Click Here)](https://haversine-distance-calculator.vercel.app
 )
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Casos de prueba manual
+
+| Test Case                                           | Precondition                                            | Test Steps                                                                                                                | Test Data                                       | Expected Result                                                |
+|-----------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|----------------------------------------------------------------|
+| Verificar distancia entre dos ciudades válidas      | La aplicación debe estar funcionando con conexión a la API o acceso al archivo CSV. | 1. Seleccionar una ciudad y país para la "Ubicación 1" (ejemplo: "Lima, Perú").<br>2. Seleccionar otra ciudad y país para la "Ubicación 2" (ejemplo: "Bogotá, Colombia").<br>3. Presionar el botón "Calcular Distancia". | Ubicación 1: Lima, Perú<br>Ubicación 2: Bogotá, Colombia | La aplicación muestra un mensaje con la distancia calculada en kilómetros (ejemplo: "La distancia calculada es de 1887.13 km"). |
+| Verificar mensaje de error cuando una ciudad no existe | La aplicación debe estar funcionando y tener conexión a la API o acceso al archivo CSV. | 1. Seleccionar una ciudad y país para la "Ubicación 1" (ejemplo: "Lima, Perú").<br>2. Seleccionar una ciudad y país para la "Ubicación 2" de la cuál no se tiene información (ejemplo: "Bokaa, Botswana").<br>3. Presionar el botón "Calcular Distancia". | Ubicación 1: Lima, Perú<br>Ubicación 2: Bokaa, Botswana | Aparece un mensaje de error indicando "Coordenadas de Bokaa, Botswana no encontradas". |
+| Verificar resultado cuando ambas ciudades son la misma | La aplicación debe estar funcionando correctamente y tener conexión a la API o acceso al archivo CSV. | 1. Seleccionar la misma ciudad y país para la "Ubicación 1" y la "Ubicación 2" (ejemplo: "Lima, Perú").<br>2. Presionar el botón "Calcular Distancia". | Ubicación 1: Lima, Perú<br>Ubicación 2: Lima, Perú | La aplicación muestra un mensaje indicando "La distancia calculada es de 0.00 km". |
+
 
 ## Getting Started
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 First, run the development server:
 

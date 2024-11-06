@@ -13,6 +13,7 @@ const config: Config = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
 
+
   // Opcional: Si usas transformaciones adicionales, puedes especificarlas aquí
   // transform: {
   //   '^.+\\.(ts|tsx)$': 'ts-jest',

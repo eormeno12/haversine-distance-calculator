@@ -1,12 +1,10 @@
-// src/__tests__/coordsApi.test.ts
-
 import request from 'supertest';
-import { createServer } from 'http';
+import { createServer, Server } from 'http';
 import { NextRequest } from 'next/server';
-import { GET } from '../app/api/cities/coords/route'; // Ajusta la ruta según tu estructura de carpetas
+import { GET } from '../app/api/cities/coords/route'; 
 
 describe('GET /api/coords', () => {
-  let server: any;
+  let server: Server;
 
   beforeAll(() => {
     server = createServer(async (req, res) => {

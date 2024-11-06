@@ -1,10 +1,10 @@
 import request from 'supertest';
-import { createServer } from 'http';
+import { createServer, Server } from 'http';
 import { NextRequest } from 'next/server';
 import { GET } from '../app/api/cities/distance/route'; 
 
 describe('GET /api/distance', () => {
-  let server: any;
+  let server: Server;
 
   beforeAll(() => {
     server = createServer(async (req, res) => {
